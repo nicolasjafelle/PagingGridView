@@ -13,11 +13,11 @@ Instructions 1
 4. DONE
 
 
-Instructions 2 - NOT YET UNTIL FULLY WORKING
+Instructions 2 
 ============
-
+0. NOT YET UNTIL FULLY WORKING
 1. Add Nicolas Jafelle's Maven repo to your build.gradle: <a href="https://github.com/nicolasjafelle/maven-repo">Instructions</a>
-2. add this dependency: 'com.paginglistview:paging-listview:1.0'
+2. add this dependency: 'com.paginggridview:paging-gridview:1.0'
 3. DONE
 
 
