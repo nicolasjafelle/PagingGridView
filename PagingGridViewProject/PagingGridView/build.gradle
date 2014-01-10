@@ -1,0 +1,47 @@
+buildscript {
+    repositories {
+        maven {
+            url "${System.env.HOME}/.m2/repository"
+        }
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.7.+'
+    }
+}
+apply plugin: 'android-library'
+apply plugin: 'maven'
+
+repositories {
+    maven {
+        url "${System.env.HOME}/.m2/repository"
+    }
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.0.1"
+
+    defaultConfig {
+        minSdkVersion 9
+        targetSdkVersion 19
+        versionCode 1
+        versionName '1.0'
+    }
+}
+
+
+group = 'com.paginggridview'
+archivesBaseName = 'paging-gridview'
+version = '1.0'
+
+ext.home = "file://" + System.getProperty("user.home") + "/.m2/repository"
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: home)
+        }
+    }
+}
