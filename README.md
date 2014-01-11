@@ -29,7 +29,7 @@ Instructions 2
 How to Use it
 ================
 
-Simple create your PagingAdapter and add it to com.paging.listview.PagingListView.<br>
+Simple create your PagingAdapter and add it to com.paging.gridview.PagingGridView.<br>
 You have to implements the new Pagingable interface and its onLoadMoreItems() method. For example:<br>
 ``` java
 gridView.setHasMoreItems(true);
