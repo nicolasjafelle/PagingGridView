@@ -4,6 +4,8 @@ package com.paging.gridview;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ListAdapter;
 
@@ -128,7 +130,10 @@ public class HeaderGridView extends GridView {
 	 */
 	public void addFooterView(View v, Object data, boolean isSelectable) {
 		final FixedViewInfo info = new FixedViewInfo();
+		FrameLayout fl = new FullWidthFixedViewLayout(getContext());
+		fl.addView(v);
 		info.view = v;
+		info.viewContainer = fl;
 		info.data = data;
 		info.isSelectable = isSelectable;
 		mFooterViewInfos.add(info);
@@ -241,7 +246,24 @@ public class HeaderGridView extends GridView {
 
 	public class FixedViewInfo {
 		public android.view.View view;
+		public ViewGroup viewContainer;
 		public java.lang.Object data;
 		public boolean isSelectable;
+	}
+
+	private class FullWidthFixedViewLayout extends FrameLayout {
+		public FullWidthFixedViewLayout(Context context) {
+			super(context);
+		}
+
+		@Override
+		protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+			int targetWidth = HeaderGridView.this.getMeasuredWidth()
+				- HeaderGridView.this.getPaddingLeft()
+				- HeaderGridView.this.getPaddingRight();
+			widthMeasureSpec = MeasureSpec.makeMeasureSpec(targetWidth,
+				MeasureSpec.getMode(widthMeasureSpec));
+			super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+		}
 	}
 }

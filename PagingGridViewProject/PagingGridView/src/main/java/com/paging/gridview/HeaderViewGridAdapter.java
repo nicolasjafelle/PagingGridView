@@ -213,7 +213,7 @@ public class HeaderViewGridAdapter implements WrapperListAdapter, Filterable {
         // Header (negative positions will throw an IndexOutOfBoundsException)
         int numHeaders = getHeadersCount();
         if (position < numHeaders) {
-            return mHeaderViewInfos.get(position).view;
+            return mHeaderViewInfos.get(position).viewContainer;
         }
 
         // Adapter
@@ -227,7 +227,7 @@ public class HeaderViewGridAdapter implements WrapperListAdapter, Filterable {
         }
 
         // Footer (off-limits positions will throw an IndexOutOfBoundsException)
-        return mFooterViewInfos.get(adjPosition - adapterCount).view;
+        return mFooterViewInfos.get(adjPosition - adapterCount).viewContainer;
     }
 
     public int getItemViewType(int position) {
