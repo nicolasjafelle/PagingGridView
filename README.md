@@ -12,17 +12,10 @@ Instructions 1
 3. Add "PagingGridView" module in your settings.gradle
 4. DONE
 
-Very Important Bug
-============
-This project has a major bug: the headers and the footers are not filled in all the row, they draw as another item in the grid. I think that headers and footers should be displayed like one item in a row.
-
-<b>I am asking for your help to fix this important bug.</b>
-
 Instructions 2 
 ============
-0. <b>NOT YET UNTIL FULLY WORKING</b>
 1. Add Nicolas Jafelle's Maven repo to your build.gradle: <a href="https://github.com/nicolasjafelle/maven-repo">Instructions</a>
-2. add this dependency: 'com.paginggridview:paging-gridview:1.0'
+2. add this dependency: 'com.paginggridview:paging-gridview:1.0.BETA'
 3. DONE
 
 

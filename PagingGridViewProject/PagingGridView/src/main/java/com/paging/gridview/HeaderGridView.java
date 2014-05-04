@@ -72,7 +72,10 @@ public class HeaderGridView extends GridView {
 	 */
 	public void addHeaderView(View v, Object data, boolean isSelectable) {
 		final FixedViewInfo info = new FixedViewInfo();
+		FrameLayout fl = new FullWidthFixedViewLayout(getContext());
+		fl.addView(v);
 		info.view = v;
+		info.viewContainer = fl;
 		info.data = data;
 		info.isSelectable = isSelectable;
 		mHeaderViewInfos.add(info);
