@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.paging.gridview.HeaderViewGridAdapter;
+import com.paging.gridview.FooterViewGridAdapter;
 import com.paging.gridview.PagingGridView;
 
 import java.util.ArrayList;
@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
 	private void clearData() {
 		if(gridView.getAdapter() != null) {
 			pager = 0;
-			adapter = (MyPagingAdaper)((HeaderViewGridAdapter)gridView.getAdapter()).getWrappedAdapter();
+			adapter = (MyPagingAdaper)((FooterViewGridAdapter)gridView.getAdapter()).getWrappedAdapter();
 			adapter.removeAllItems();
 			gridView = null;
 			gridView = (PagingGridView) findViewById(R.id.paging_grid_view);

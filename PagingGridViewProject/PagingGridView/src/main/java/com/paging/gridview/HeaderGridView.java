@@ -63,7 +63,7 @@ public class HeaderGridView extends GridView {
 	 * setting the adapter with {@link #setAdapter(ListAdapter)}. Starting with
 	 * {@link android.os.Build.VERSION_CODES#KITKAT}, this method may be
 	 * called at any time. If the ListView's adapter does not extend
-	 * {@link HeaderViewGridAdapter}, it will be wrapped with a supporting
+	 * {@link FooterViewGridAdapter}, it will be wrapped with a supporting
 	 * instance of {@link android.widget.WrapperListAdapter}.
 	 *
 	 * @param v The view to add.
@@ -82,8 +82,8 @@ public class HeaderGridView extends GridView {
 
 		// Wrap the adapter if it wasn't already wrapped.
 		if (mAdapter != null) {
-			if (!(mAdapter instanceof HeaderViewGridAdapter)) {
-				mAdapter = new HeaderViewGridAdapter(mHeaderViewInfos, mFooterViewInfos, mAdapter);
+			if (!(mAdapter instanceof FooterViewGridAdapter)) {
+				mAdapter = new FooterViewGridAdapter(mHeaderViewInfos, mFooterViewInfos, mAdapter);
 			}
 
 			// Do not know if this really helps
@@ -102,7 +102,7 @@ public class HeaderGridView extends GridView {
 	 * setting the adapter with {@link #setAdapter(ListAdapter)}. Starting with
 	 * {@link android.os.Build.VERSION_CODES#KITKAT}, this method may be
 	 * called at any time. If the ListView's adapter does not extend
-	 * {@link HeaderViewGridAdapter}, it will be wrapped with a supporting
+	 * {@link FooterViewGridAdapter}, it will be wrapped with a supporting
 	 * instance of {@link android.widget.WrapperListAdapter}.
 	 *
 	 * @param v The view to add.
@@ -124,7 +124,7 @@ public class HeaderGridView extends GridView {
 	 * setting the adapter with {@link #setAdapter(ListAdapter)}. Starting with
 	 * {@link android.os.Build.VERSION_CODES#KITKAT}, this method may be
 	 * called at any time. If the ListView's adapter does not extend
-	 * {@link HeaderViewGridAdapter}, it will be wrapped with a supporting
+	 * {@link FooterViewGridAdapter}, it will be wrapped with a supporting
 	 * instance of {@link android.widget.WrapperListAdapter}.
 	 *
 	 * @param v The view to add.
@@ -143,8 +143,8 @@ public class HeaderGridView extends GridView {
 
 		// Wrap the adapter if it wasn't already wrapped.
 		if (mAdapter != null) {
-			if (!(mAdapter instanceof HeaderViewGridAdapter)) {
-				mAdapter = new HeaderViewGridAdapter(mHeaderViewInfos, mFooterViewInfos, mAdapter);
+			if (!(mAdapter instanceof FooterViewGridAdapter)) {
+				mAdapter = new FooterViewGridAdapter(mHeaderViewInfos, mFooterViewInfos, mAdapter);
 			}
 
 			// Do not know if this really helps
@@ -161,7 +161,7 @@ public class HeaderGridView extends GridView {
 	 * setting the adapter with {@link #setAdapter(ListAdapter)}. Starting with
 	 * {@link android.os.Build.VERSION_CODES#KITKAT}, this method may be
 	 * called at any time. If the ListView's adapter does not extend
-	 * {@link HeaderViewGridAdapter}, it will be wrapped with a supporting
+	 * {@link FooterViewGridAdapter}, it will be wrapped with a supporting
 	 * instance of {@link android.widget.WrapperListAdapter}.
 	 *
 	 * @param v The view to add.
@@ -184,31 +184,11 @@ public class HeaderGridView extends GridView {
 	public boolean removeFooterView(View v) {
 		if (mFooterViewInfos.size() > 0) {
 			boolean result = false;
-			if (mAdapter != null && ((HeaderViewGridAdapter) mAdapter).removeFooter(v)) {
+			if (mAdapter != null && ((FooterViewGridAdapter) mAdapter).removeFooter(v)) {
 				notifiyChanged();
 				result = true;
 			}
 			removeFixedViewInfo(v, mFooterViewInfos);
-			return result;
-		}
-		return false;
-	}
-
-	/**
-	 * Removes a previously-added header view.
-	 *
-	 * @param v The view to remove
-	 * @return true if the view was removed, false if the view was not a header
-	 *         view
-	 */
-	public boolean removeHeaderView(View v) {
-		if (mHeaderViewInfos.size() > 0) {
-			boolean result = false;
-			if (mAdapter != null && ((HeaderViewGridAdapter) mAdapter).removeHeader(v)) {
-				notifiyChanged();
-				result = true;
-			}
-			removeFixedViewInfo(v, mHeaderViewInfos);
 			return result;
 		}
 		return false;
@@ -231,7 +211,7 @@ public class HeaderGridView extends GridView {
 		this.mAdapter = adapter;
 
 		if (mHeaderViewInfos.size() > 0|| mFooterViewInfos.size() > 0) {
-			mAdapter = new HeaderViewGridAdapter(mHeaderViewInfos, mFooterViewInfos, adapter);
+			mAdapter = new FooterViewGridAdapter(mHeaderViewInfos, mFooterViewInfos, adapter);
 		} else {
 			mAdapter = adapter;
 		}

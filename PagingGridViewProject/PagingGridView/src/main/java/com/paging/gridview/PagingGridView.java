@@ -62,7 +62,7 @@ public class PagingGridView extends HeaderGridView {
 		setHasMoreItems(hasMoreItems);
 		setIsLoading(false);
 		if(newItems != null && newItems.size() > 0) {
-			ListAdapter adapter = ((HeaderViewGridAdapter)getAdapter()).getWrappedAdapter();
+			ListAdapter adapter = ((FooterViewGridAdapter)getAdapter()).getWrappedAdapter();
 			if(adapter instanceof PagingBaseAdapter ) {
 				((PagingBaseAdapter)adapter).addMoreItems(newItems);
 			}
