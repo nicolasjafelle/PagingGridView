@@ -3,6 +3,16 @@ PagingGridView
 
 PagingGridView has the ability to add more items on it like PagingListView does. Basically is a GridView with the ability to add more items on it when reaches the end of the list.<br>
 
+Instructions - Maven Central
+============
+
+1. Add this library in your build.gradle:
+
+```groovy
+dependencies {
+    compile 'com.github.nicolasjafelle:paginggridview:1.0'
+}
+```
 
 Instructions 1
 ============
