@@ -1,6 +1,8 @@
 PagingGridView
 ==============
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PagingGridView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/184)
+
 PagingGridView has the ability to add more items on it like PagingListView does. Basically is a GridView with the ability to add more items on it when reaches the end of the list.<br>
 
 Instructions - Maven Central
